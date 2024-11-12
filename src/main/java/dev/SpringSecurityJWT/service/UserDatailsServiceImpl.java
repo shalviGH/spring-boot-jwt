@@ -30,6 +30,7 @@ public class UserDatailsServiceImpl implements UserDetailsService {
                 .map(role -> new SimpleGrantedAuthority("ROLE_".concat(role.getName().name())))
                 .collect(Collectors.toSet());
 
+        //devolviendo un nuevo usuario
         return new User(userEntity.getUser_name(),
                 userEntity.getPassword(),
                 true,
